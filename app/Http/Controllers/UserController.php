@@ -29,7 +29,7 @@ class UserController extends Controller
             return response()->json([
                 'res' => true,
                 'token' => $user->api_token,
-                'message' => "Ok"
+                'message' => "User successfully registered"
             ], 200);
         }else{
             return response()->json([
