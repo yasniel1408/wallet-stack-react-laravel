@@ -11,6 +11,5 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+require (__DIR__ . '/web/guest.php');
+require (__DIR__ . '/web/auth.php');

@@ -13,10 +13,16 @@ use Illuminate\Http\Request;
 |
 */
 
-//Route::middleware('auth:api')->get('/user', function (Request $request) {
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
 //    return $request->user();
-//});
+// });
 
-Route::get('/wallet', 'WalletController@index');
+Route::post('/users', "UserController@store");
+Route::post('/login', "UserController@login");
 
-Route::post('/transfer', 'TransferController@store');
+Route::group(['middleware' => 'auth:api'], function() {
+    Route::get('/wallet', 'WalletController@index');
+    Route::post('/transfer', 'TransferController@store');
+});
+
+

@@ -11,5 +11,10 @@ let mix = require('laravel-mix');
  |
  */
 
+mix.copyDirectory('resources/images/', 'public/images');
+ 
 mix.react('resources/assets/js/app.js', 'public/js')
    .sass('resources/assets/sass/app.scss', 'public/css');
+
+mix.react('resources/assets/js/book/App/App.js', 'public/js/book/App');
+mix.react('resources/assets/js/book/Index/Index.js', 'public/js/book/Index');

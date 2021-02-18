@@ -1,0 +1,51 @@
+@import "../../../sass/variables";
+
+  .form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-spacing: 2em;
+    background: #3097d13b;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: $input-size-text;
+    -webkit-box-shadow: 2px 3px 79px 14px rgba(0, 0, 0, 0.16);
+    -moz-box-shadow: 2px 3px 79px 14px rgba(0, 0, 0, 0.16);
+    box-shadow: 2px 3px 79px 14px rgba(0, 0, 0, 0.16);
+    .loginText {
+      color: #fff !important;
+    }
+    a{
+        font-size: 20px;
+        text-decoration: none;
+    }
+    input[type="submit"]{
+        width: 98%;
+        border: none;
+        outline:none !important;
+        border-radius: 10px;
+        transition: 0.5s;
+    }
+    input[type="submit"]:hover{
+        width: 97%;
+        border: none;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.14) 0px 10px 10px;
+        background: linear-gradient(to right, #091155, #2b188b4b, $brand-primary);
+        transform: scale(1.01) translate(1px, 4px) skewY(-3deg);
+        transition: 0.5s;
+    }
+    input[type="submit"]:active{
+        outline:none !important;
+        background: linear-gradient(to right,#2b188b4b, $brand-primary, #091155);
+        transform: scale(1.01) translate(1px, 4px) skewY(-3deg);
+        transition: 0.5s;
+    }
+    input[type="submit"]::selection{
+        border: none !important;
+        outline:none !important;
+        background: linear-gradient(to right,#2b188b4b, $brand-primary, #091155);
+        transform: scale(1.01) translate(1px, 4px) skewY(-3deg);
+        transition: 0.5s;
+    }
+  }
