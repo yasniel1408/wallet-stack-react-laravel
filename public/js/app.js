@@ -24543,22 +24543,27 @@ var Index = function (_Component) {
                 data = res.data;
 
                 console.log(data);
-                _context.next = 14;
+                if (data.res == true) {
+                  window.location = "/wallet";
+                } else {
+                  alert(data.message);
+                }
+                _context.next = 15;
                 break;
 
-              case 10:
-                _context.prev = 10;
+              case 11:
+                _context.prev = 11;
                 _context.t0 = _context["catch"](1);
 
                 this.setState({ error: _context.t0 });
                 console.log(_context.t0);
 
-              case 14:
+              case 15:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, this, [[1, 10]]);
+        }, _callee, this, [[1, 11]]);
       }));
 
       function handleSubmitLogin(_x) {
@@ -24590,22 +24595,27 @@ var Index = function (_Component) {
                 data = res.data;
 
                 console.log(data);
-                _context2.next = 14;
+                if (data.res == true) {
+                  window.location = "/";
+                } else {
+                  alert(data.message);
+                }
+                _context2.next = 15;
                 break;
 
-              case 10:
-                _context2.prev = 10;
+              case 11:
+                _context2.prev = 11;
                 _context2.t0 = _context2["catch"](1);
 
                 this.setState({ error: _context2.t0 });
                 console.log(_context2.t0);
 
-              case 14:
+              case 15:
               case "end":
                 return _context2.stop();
             }
           }
-        }, _callee2, this, [[1, 10]]);
+        }, _callee2, this, [[1, 11]]);
       }));
 
       function handleSubmitRegister(_x2) {

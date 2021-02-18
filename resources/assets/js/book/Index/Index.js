@@ -34,6 +34,11 @@ export default class Index extends Component {
       );
       let data = res.data;
       console.log(data)
+      if(data.res == true){
+        window.location = "/wallet"
+      }else{
+        alert(data.message)
+      }
     } catch (error) {
       this.setState({ error });
       console.log(error);
@@ -55,6 +60,11 @@ export default class Index extends Component {
       );
       let data = res.data;
       console.log(data)
+      if(data.res == true){
+        window.location = "/"
+      }else{
+        alert(data.message)
+      }
     } catch (error) {
       this.setState({ error });
       console.log(error);

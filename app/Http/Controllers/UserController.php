@@ -26,8 +26,11 @@ class UserController extends Controller
         if(!is_null($user) && Hash::check($request->password, $user->password)){
             $user->api_token = Str::random(100);
             $user->save();
-
-            return redirect()->route('/wallet');
+            return response()->json([
+                'res' => true,
+                'token' => $user->api_token,
+                'message' => "Ok"
+            ], 200);
         }else{
             return response()->json([
                 'res' => false,
