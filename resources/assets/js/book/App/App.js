@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import TransferForm from "../../components/TransferForm.js";
-import TransferList from "../../components/TransferList.js";
+import TransferForm from "../../components/TransferForm";
+import TransferList from "../../components/TransferList";
+import NavBar from "../../components/NavBar";
 import './App.scss';
 
 export default class App extends Component {
@@ -23,7 +24,12 @@ export default class App extends Component {
 
   async componentDidMount() {
     try {
-      let res = await axios("api/wallet");
+      let headers = {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${localStorage.getItem("token")}`
+      };
+      let res = await axios("api/wallet", { headers });
       let data = res.data;
       this.setState({
         money: data.money,
@@ -44,7 +50,8 @@ export default class App extends Component {
     try {
       let headers = {
         Accept: "application/json",
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${localStorage.getItem("token")}`
       };
 
       let res = await axios.post(
@@ -74,7 +81,8 @@ export default class App extends Component {
 
   render() {
     return (
-      <div className="micontenedor">
+      <div className="miContenedor">
+        <NavBar/>
         <div className="title">${this.state.money}</div>
         <TransferForm
           form={this.state.form}

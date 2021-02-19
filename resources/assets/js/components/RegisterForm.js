@@ -7,7 +7,8 @@ export const RegisterForm = ({
   name,
   email,
   handleSubmit,
-  onChange
+  onChange,
+  loading
 }) => (
   <form className="form" onSubmit={handleSubmit}>
     <h2 className="loginText">Register My Wallet</h2>
@@ -43,7 +44,7 @@ export const RegisterForm = ({
       value={rerepeatPassword}
       onChange={onChange}
     />
-    <input type="submit" value="Send" />
+    <input type="submit" value={(!loading)?"Send":"Cargando..."} />
     <Link to="/"> Login</Link>
   </form>
 );

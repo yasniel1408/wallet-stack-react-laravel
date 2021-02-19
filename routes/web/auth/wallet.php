@@ -2,6 +2,11 @@
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/wallet', function () {
-    return view('wallet');
-});
+
+
+Route::get('/wallet', 'WalletController@wallet');
+
+
+
+
+

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 
-export const LoginForm = ({password, email, handleSubmit, onChange}) => (
+export const LoginForm = ({password, email, handleSubmit, onChange, loading}) => (
   <form className="form" onSubmit={handleSubmit}>
     <h2 className="loginText">Login My Wallet</h2>
     <input
@@ -20,7 +20,7 @@ export const LoginForm = ({password, email, handleSubmit, onChange}) => (
       value={password}
       onChange={onChange}
     />
-    <input type="submit" value="Send"/>
+    <input type="submit" value={(!loading)?"Send":"Cargando..."}/>
     <Link to="/register"> Register</Link>
   </form>
 );

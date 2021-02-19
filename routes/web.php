@@ -12,4 +12,9 @@
 */
 
 require (__DIR__ . '/web/guest.php');
-require (__DIR__ . '/web/auth.php');
+
+
+//Route::group(['middleware' => 'auth:api'], function() {
+    require (__DIR__ . '/web/auth.php');
+//});
+

@@ -37,6 +37,15 @@ class UserController extends Controller
                 'message' => "Incorrect email or password"
             ], 200);
         }
-
      }
+
+    public function logout(){
+        $user = auth()->user();
+        $user->api_token = null;
+        $user->save();
+
+        return response()->json([
+            'res' => true,
+        ], 200);
+    }
 }
